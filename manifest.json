@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Azure AI Assistant",
+    "version": "1.1",
+    "description": "Select text or take a screenshot to send to Azure OpenAI and copy the response.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "clipboardWrite",
+        "offscreen"
+    ],
+    "host_permissions": ["https://*.openai.azure.com/"],
+    "action": {
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png"
+        },
+        "default_title": "Analyze with Azure AI"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "options_page": "options.html",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    }
+}

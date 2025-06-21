@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Azure AI Assistant Settings</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 10px 20px;
+            width: 400px;
+        }
+        
+        h1 {
+            font-size: 1.2em;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #0078d4;
+            color: white;
+            cursor: pointer;
+        }
+        
+        #status {
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Azure AI Assistant Settings</h1>
+    <p>Enter your Azure OpenAI service details below.</p>
+
+    <div class="form-group">
+        <label for="endpoint">Azure Endpoint</label>
+        <input type="url" id="endpoint" placeholder="https://your-resource-name.openai.azure.com/" />
+    </div>
+
+    <div class="form-group">
+        <label for="apiKey">API Key</label>
+        <input type="password" id="apiKey" placeholder="Enter your Azure OpenAI API Key" />
+    </div>
+
+    <div class="form-group">
+        <label for="deploymentName">Deployment Name (Model)</label>
+        <input type="text" id="deploymentName" placeholder="gpt-4-vision-preview or similar" />
+    </div>
+
+    <button id="save">Save Settings</button>
+    <div id="status"></div>
+
+    <script src="options.js"></script>
+</body>
+
+</html>
