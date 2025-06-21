@@ -22,14 +22,14 @@ chrome.action.onClicked.addListener((tab) => {
             if (selectionResult && selectionResult[0].result) {
                 const selectedText = selectionResult[0].result;
                 console.log('Found selected text:', selectedText);
-                const prompt = `Please analyze the following text and provide a concise summary or key takeaways:\n\n"${selectedText}"`;
+                const prompt = `You are a quiz expert, if any question is present in the text, provide just the answer to the question and a very very short explanation :\n\n"${selectedText}"`;
                 processWithAzureAI(settings, prompt, null);
             } else {
                 console.log('No text selected, taking screenshot.');
                 const screenshotUrl = await chrome.tabs.captureVisibleTab(
                     tab.windowId, { format: 'jpeg' },
                 );
-                const prompt = 'Describe what you see in this screenshot.';
+                const prompt = 'You are a quiz expert, if any question is present in the screenshot, provide just the answer to the question and a very very short explanation';
                 processWithAzureAI(settings, prompt, screenshotUrl);
             }
         }
